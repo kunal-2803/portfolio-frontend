@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { trackDownload } from "@/utils/analytics";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -9,6 +10,10 @@ const Hero = () => {
 
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleResumeDownload = () => {
+    trackDownload("Kunal_Agarwal_Resume.pdf", "resume");
   };
 
   return (
@@ -51,7 +56,7 @@ const Hero = () => {
               View Projects
               <ArrowDown className="ml-2 h-4 w-4" />
             </Button>
-            <a href="/kunal_Resume.pdf" download="Kunal_Agarwal_Resume.pdf">
+            <a href="/kunal_Resume.pdf" download="Kunal_Agarwal_Resume.pdf" onClick={handleResumeDownload}>
               <Button size="lg" variant="secondary" className="shadow-glow">
                 Download Resume
               </Button>

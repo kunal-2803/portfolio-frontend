@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { z } from "zod";
+import { trackFormSubmit } from "@/utils/analytics";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name is too long"),
@@ -44,6 +45,9 @@ const Contact = () => {
       if (!response.ok) {
         throw new Error('Failed to send message');
       }
+
+      // Track form submission in Google Analytics
+      trackFormSubmit("contact_form");
 
       toast({
         title: "Message sent!",
