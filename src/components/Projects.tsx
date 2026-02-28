@@ -6,13 +6,14 @@ const projects = [
   {
     title: "Chataffy – AI Chat Support System",
     description: "Professional AI-powered chat support platform with web scraping, embedding pipelines, and real-time communication.",
-    tech: ["Next.js", "Node.js", "Socket.IO", "BullMQ", "Pinecone", "Docker"],
+    tech: ["Next.js", "Node.js", "Socket.IO", "BullMQ", "Qdrant", "Docker","Redis","RAG","OpenAI"],
     highlights: [
       "Created web scraping and embedding pipelines for chatbot training",
       "Used BullMQ for job queues and Pinecone for vector storage",
+      "Used RAG Model Approach for OpenAI chat completion",
       "Containerized with Docker for scalable deployment"
     ],
-    demoUrl: "", // User will add
+    demoUrl: "https://chataffy.com/chataffy/cahtaffy_fe", // User will add
     image: "/chataffy-image.png",
   },
   {
